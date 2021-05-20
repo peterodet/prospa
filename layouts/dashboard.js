@@ -27,7 +27,7 @@ export default function Layout({ title, children, back }) {
       <main className="flex h-screen bg-gray-200">
         <div
           className={classnames(
-          "hidden z-10 md:flex flex-col content-center shadow-lg bg-white h-100 w-80")}
+          "hidden z-10 md:flex flex-col content-center shadow-xl bg-white h-100 w-80")}
         >
           <div className="px-6 py-5 border-b border-gray-300">
             <div className="relative">
@@ -48,7 +48,7 @@ export default function Layout({ title, children, back }) {
                   </svg>
                 </button>
               </div>
-              <div className={classnames('rounded shadow-xl border border-gray-200 mt-4', {'hidden': !showUserMenu})}>
+              <div className={classnames('bg-white absolute rounded shadow-xl border border-gray-200 w-full mt-2', {'hidden': !showUserMenu})}>
                 <ul>
                   <li className="text-sm px-5 py-3 border-b border-gray-300">
                     Clayvant Inc
