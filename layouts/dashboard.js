@@ -63,7 +63,7 @@ export default function Layout({ title, children, back }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-grow px-8 pb-8">
+          <div className="flex flex-col flex-grow p-8 pt-5">
             <div className="text-white mt-14">
             </div>
             <footer className="text-gray-500 mt-auto">
