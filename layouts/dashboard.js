@@ -116,7 +116,7 @@ export default function Layout({ title, children, back }) {
             </svg>
           </div>
           <div className="flex flex-col px-5 md:px-8 lg:px-16 py-8 md:py-10 mt-18 mb-18">
-            {children}
+            {/* {children} */}
           </div>
         </div>
       </main>
