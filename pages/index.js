@@ -5,7 +5,7 @@ import Button from '../components/button'
 import Input from '../components/input'
 import Select from '../components/select'
 
-export default function Login() {
+export default function Home() {
 
   const router = useRouter()
   const [loading, setLoading] = useState(false)
@@ -52,8 +52,4 @@ export default function Login() {
       </div>
     </Layout>
   )
-}
-
-export async function getServerSideProps() {
-  return { props: { data: [] } }
 }
