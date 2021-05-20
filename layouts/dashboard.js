@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useRouter } from "next/router";
 import classnames from "classnames";
 
-export default function Layout({ title, bg, children, back }) {
+export default function Layout({ title, children, back }) {
 
   const router = useRouter();
   const [showUserMenu, setShowUserMenu] = useState(false)

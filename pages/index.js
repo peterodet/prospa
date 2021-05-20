@@ -53,3 +53,5 @@ export default function Login() {
     </Layout>
   )
 }
+
+export async function getServerSideProps() {}
