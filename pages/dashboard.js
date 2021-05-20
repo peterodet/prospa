@@ -21,33 +21,20 @@ export default function Dashboard() {
   return (
     <Layout title="Dashboard">
       <div>
-        <div className="flex flex-col max-w-375 mx-auto">
-          <h4 className="text-2.5xl font-medium leading-tight mb-2 md:mb-2">
-            Create your account
-          </h4>
-          <p className="text-md text-gray-400">A short description about account types</p>
-          <form onSubmit={(e) => submit(e)} className="flex flex-col gap-6 mt-8">
-            <div>
-              <Input label="First name" />
+        <div className="flex flex-col mx-auto">
+          <div className="flex">
+            <div className="flex-grow">
+              <h4 className="text-2.5xl font-semibold leading-tight mb-2 md:mb-1">
+                Welcome back, Kathy
+              </h4>
+              <p className="text-md">Here’s what has been happening in the last <span className="text-pink-500 underline">7 days</span></p>
             </div>
-            <div>
-              <Input label="Last name" />
+            <div className="my-auto">
+              <Button>
+                Add a sub account
+              </Button>
             </div>
-            <div className="grid grid-cols-12 gap-3">
-              <div className="col-span-4">
-                <Select label="Country" block={true} options={['+234', '+322']} />
-              </div>
-              <div className="col-span-8">
-                <Input type="tel" label="Mobile number" block={true} />
-              </div>
-            </div>
-            <div>
-              <Input type="email" label="Email address" />
-            </div>
-            <Button loading={loading} block={true}>
-                Next
-            </Button>
-          </form>
+          </div>
         </div>
       </div>
     </Layout>
