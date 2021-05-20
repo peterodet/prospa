@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useState } from 'react'
 import { useRouter } from "next/router";
 import classnames from "classnames";
@@ -63,8 +64,58 @@ export default function Layout({ title, children, back }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-grow p-8 pt-5">
-            <div className="text-white mt-14">
+          <div className="flex flex-col flex-grow p-8 pt-6">
+            <div className="text-white">
+              <ul className="leading-normal">
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                      <svg width="24" height="17" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-116h1440v900H-32z"/><g transform="translate(-32 -116)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M23.8 9.073v.907a1.907 1.907 0 01-1.901 1.901h-1.463V9.073H23.8zM21.899 0c1.045 0 1.9.855 1.9 1.901v4.614h-3.371a3.328 3.328 0 00-3.32-3.176H4.79V1.9C4.79.855 5.645 0 6.691 0z" fill="#FEDBE6"/><path d="M17.109 4.764c1.045 0 1.9.856 1.9 1.901v8.08a1.906 1.906 0 01-1.9 1.9H1.9A1.906 1.906 0 010 14.746v-8.08c0-1.045.855-1.9 1.901-1.9zm-.291 8.426h-2.852v.731h2.852v-.731zm-3.802 0h-2.852v.731h2.852v-.731zm-4.04 0H6.125v.731h2.851v-.731zm-3.802 0H2.323v.731h2.851v-.731zM4.428 7.37H2.772a.477.477 0 00-.475.476v1.796c0 .261.214.475.475.475h1.656a.477.477 0 00.476-.475V7.847a.477.477 0 00-.476-.476z" fill="#FA4A84"/></g></svg>
+                      <span className="text-sm text-pink-500 my-auto">Accounts</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                      <svg width="24" height="27" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-166h1440v900H-32z"/><g transform="translate(-32 -166)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M8.422 9.12c-.124.502-.211.98-.272 1.416H3.168c-.587 0-1.066.36-1.066.8l.004.03c0 .006-.004.013-.004.02v.481c0 .147.12.267.267.267h20.413v3.919h-.404c-.022 0-.044.002-.065.003-.022 0-.043-.003-.064-.003h-4.643a2.67 2.67 0 00-2.666 2.666v1.2a2.67 2.67 0 002.666 2.667h4.643c.021 0 .042-.003.064-.003.021 0 .043.003.065.003h.404v3.365c0 .293-.24.533-.533.533H2.667A2.675 2.675 0 010 23.818V11.786c0-1.467 1.2-2.667 2.667-2.667zm13.827 8c.029 0 .057.002.085.004.015 0 .029-.005.044-.005h.404c.586 0 1.067.48 1.067 1.067v2.267a1.07 1.07 0 01-1.067 1.066h-.404c-.015 0-.029-.004-.044-.004-.028.001-.056.004-.085.004h-4.643c-.88 0-1.6-.72-1.6-1.6v-1.2c0-.88.72-1.6 1.6-1.6zm-4.067 1.4a.8.8 0 10.002 1.6.8.8 0 00-.002-1.6zm-2.117-8.7v.716h-1.712a6.717 6.717 0 011.712-.716zm6.184-.7c.293 0 .533.24.533.533v.883h-2.214l1.285-1.417z" fill="#B5C1CD"/><path d="M17.404 8.049c.09 0 .176-.002.26-.005v2.779c0 .293.162.355.359.138l4.61-5.085a.594.594 0 00-.004-.786L18.027.127c-.2-.215-.362-.15-.362.142v3.179a6.816 6.816 0 00-.26-.006c-6.252 0-7.5 5.35-7.74 7.895h1.198c1.27-1.372 3.574-3.288 6.541-3.288" fill="#8397AB"/></g></svg>
+                      <span className="text-sm text-gray-400 my-auto">Transfer</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-225h1440v900H-32z"/><g transform="translate(-32 -225)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M24 8.4V24l-2.4-2.4-2.4 2.4-2.4-2.4-2.4 2.4-2.4-2.4L9.6 24l-2.4-2.4L4.8 24V8.4H24zM22 0a2 2 0 012 2v.4H4.8V0H22zM4.8 4.8H24V6H4.8V4.8z" fill="#B5C1CD"/><path d="M4.8 0v12H0V4.8A4.8 4.8 0 014.8 0z" fill="#8397AB"/></g></svg>
+                      <span className="text-sm text-gray-400 my-auto">Invoice</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-393h1440v900H-32z"/><g transform="translate(-32 -393)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M8.542 12.992l2.35 2.349-8.543 8.542L0 21.534l8.542-8.542zm13.031 3.317a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473zm-.302-10.042a1.51 1.51 0 110 3.02 1.51 1.51 0 010-3.02zM13.87 0a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473z" fill="#B5C1CD"/><path fill="#8397AB" d="M16.11 11.027l3.433 4.6-5.74-.072-3.315 4.686-1.704-5.481-5.482-1.704L7.99 9.74l-.073-5.74 4.6 3.433 5.437-1.843z"/></g></svg>
+                      <span className="text-sm text-gray-400 my-auto">Management</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-393h1440v900H-32z"/><g transform="translate(-32 -393)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M8.542 12.992l2.35 2.349-8.543 8.542L0 21.534l8.542-8.542zm13.031 3.317a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473zm-.302-10.042a1.51 1.51 0 110 3.02 1.51 1.51 0 010-3.02zM13.87 0a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473z" fill="#B5C1CD"/><path fill="#8397AB" d="M16.11 11.027l3.433 4.6-5.74-.072-3.315 4.686-1.704-5.481-5.482-1.704L7.99 9.74l-.073-5.74 4.6 3.433 5.437-1.843z"/></g></svg>
+                      <span className="text-sm text-gray-400 my-auto">Security</span>
+                    </a>
+                  </Link>
+                </li>
+                <li className="flex py-4">
+                  <Link href="/dashboard">
+                    <a class="flex gap-3">
+                      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><defs><filter x="-11.3%" y="-3.6%" width="122.7%" height="107.6%" filterUnits="objectBoundingBox" id="a"><feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="11" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.51372549 0 0 0 0 0.592156863 0 0 0 0 0.670588235 0 0 0 0.24 0" in="shadowBlurOuter1"/></filter><path id="b" d="M0 0h300v900H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#F4F8FB" d="M-32-393h1440v900H-32z"/><g transform="translate(-32 -393)"><use fill="#000" filter="url(#a)"/><use fill="#FFF"/></g><path d="M8.542 12.992l2.35 2.349-8.543 8.542L0 21.534l8.542-8.542zm13.031 3.317a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473zm-.302-10.042a1.51 1.51 0 110 3.02 1.51 1.51 0 010-3.02zM13.87 0a1.737 1.737 0 110 3.473 1.737 1.737 0 010-3.473z" fill="#B5C1CD"/><path fill="#8397AB" d="M16.11 11.027l3.433 4.6-5.74-.072-3.315 4.686-1.704-5.481-5.482-1.704L7.99 9.74l-.073-5.74 4.6 3.433 5.437-1.843z"/></g></svg>
+                      <span className="text-sm text-gray-400 my-auto">Support</span>
+                    </a>
+                  </Link>
+                </li>
+              </ul>
             </div>
             <footer className="text-gray-500 mt-auto">
               <svg
