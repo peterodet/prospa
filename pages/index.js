@@ -55,5 +55,5 @@ export default function Login() {
 }
 
 export async function getServerSideProps() {
-  return { props: { data } }
+  return { props: { data: [] } }
 }
