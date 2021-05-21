@@ -38,6 +38,10 @@ a {
   box-sizing: border-box;
 }
 
+.max-w-960 {
+  max-width: 960px;
+}
+
 .max-w-375 {
   max-width: 375px;
 }

@@ -148,7 +148,7 @@ export default function Layout({ title, children, back }) {
               <div className="w-10 h-10 bg-gray-400 rounded-full"></div>
             </div>
           </header>
-          <div className="flex py-6 md:hidden">
+          {/* <div className="flex py-6 md:hidden">
             <svg
               className="text-purple-800 mx-5"
               width="109"
@@ -162,9 +162,11 @@ export default function Layout({ title, children, back }) {
                 />
               </g>
             </svg>
-          </div>
+          </div> */}
           <div className="flex flex-col px-5 md:px-8 lg:px-16 py-8 md:py-10 mt-18 mb-18">
+            {/* <div className="w-full max-w-960 flex-grow mx-auto"> */}
             {children}
+            {/* </div> */}
           </div>
         </div>
       </main>
