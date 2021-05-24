@@ -112,16 +112,16 @@ export default function Dashboard() {
           <div className="col-span-12 md:col-span-7">
             <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
               <h5 className="text-base md:text-lg font-semibold mb-5 md:mb-7">June summary</h5>
-              <div className="flex sm:gap-6 md:gap-12">
-                <div className="text-sm my-auto">
+              <div className="flex gap-5 sm:gap-6 md:gap-12">
+                <div className="text-xs sm:text-sm my-auto">
                   <p className="text-gray-400 font-medium">Money in</p>
                   <p className="font-medium">N 5,650,000</p>
                 </div>
-                <div className="text-sm my-auto">
+                <div className="text-xs sm:text-sm my-auto">
                   <p className="text-gray-400 font-medium">Money out</p>
                   <p className="font-medium">N 5,650,000</p>
                 </div>
-                <div className="text-sm my-auto">
+                <div className="text-xs sm:text-sm my-auto">
                   <p className="text-gray-400 font-medium">Difference</p>
                   <p className="font-medium">N 5,650,000</p>
                 </div>
@@ -225,12 +225,12 @@ export default function Dashboard() {
                             <HomeIcon color="inherit" className="mt-2 ml-2" />
                           </div>
                           <div className="my-auto ml-4">
-                            <p className="text-gray-900 font-semibold">Transfer Fee</p>
-                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                            <p className="text-sm sm:text-base text-gray-900 font-semibold">Transfer Fee</p>
+                            <p className="text-xs sm:text-sm text-gray-400 font-medium">12:49 AM</p>
                           </div>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N145.90</p>
+                      <p className="text-sm sm:text-lg text-gray-900 font-medium my-auto">-N145.90</p>
                     </div>
                   </div>
                   <div className="col-span-12 border-b border-gray-300 py-4">
@@ -241,12 +241,12 @@ export default function Dashboard() {
                             <HomeIcon color="inherit" className="mt-2 ml-2" />
                           </div>
                           <div className="my-auto ml-4">
-                            <p className="text-gray-900 font-semibold">Adam Chapman</p>
-                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                            <p className="text-sm sm:text-base text-gray-900 font-semibold">Adam Chapman</p>
+                            <p className="text-xs sm:text-sm text-gray-400 font-medium">12:49 AM</p>
                           </div>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                      <p className="text-sm sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
                     </div>
                   </div>
                   <div className="col-span-12 border-b border-gray-300 py-4">
@@ -257,12 +257,12 @@ export default function Dashboard() {
                             <HomeIcon color="inherit" className="mt-2 ml-2" />
                           </div>
                           <div className="my-auto ml-4">
-                            <p className="text-gray-900 font-semibold">Shirley Barnes</p>
-                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                            <p className="text-sm sm:text-base text-gray-900 font-semibold">Shirley Barnes</p>
+                            <p className="text-xs sm:text-sm text-gray-400 font-medium">12:49 AM</p>
                           </div>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                      <p className="text-sm sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
                     </div>
                   </div>
                   <div className="col-span-12 border-b border-gray-300 py-4">
@@ -273,12 +273,12 @@ export default function Dashboard() {
                             <HomeIcon color="inherit" className="mt-2 ml-2" />
                           </div>
                           <div className="my-auto ml-4">
-                            <p className="text-gray-900 font-semibold">Shirley Barnes</p>
-                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                            <p className="text-sm sm:text-base text-gray-900 font-semibold">Shirley Barnes</p>
+                            <p className="text-xs sm:text-sm text-gray-400 font-medium">12:49 AM</p>
                           </div>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                      <p className="text-sm sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
                     </div>
                   </div>
                 </div>
