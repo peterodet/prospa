@@ -1,18 +1,21 @@
-import Head from "next/head";
-import Link from "next/link";
+import Head from "next/head"
+import Link from "next/link"
 import { useState } from 'react'
-import { useRouter } from "next/router";
-import classnames from "classnames";
+import { useRouter } from "next/router"
+import classnames from "classnames"
+import Avatar from '@material-ui/core/Avatar'
+import Backdrop from '@material-ui/core/Backdrop'
 
 export default function Layout({ title, children, back }) {
 
   const router = useRouter();
   const [showUserMenu, setShowUserMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
-  const goBack = () => {
-    router.push(back || "/");
+  const toggleMenu = () => {
+    setShowMenu(!showMenu)
   };
-
+  
   const toggleUserMenu = () => {
     setShowUserMenu(!showUserMenu)
   };
@@ -24,10 +27,13 @@ export default function Layout({ title, children, back }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen bg-gray-200">
+      <main className="flex relative min-h-screen bg-gray-200">
         <div
           className={classnames(
-          "hidden z-10 md:flex flex-col content-center shadow-xl bg-white h-100 w-80")}
+            "fixed top-0 left-0 md:relative",
+            "side-menu z-10 flex flex-col content-center shadow-xl bg-white min-h-screen h-100 w-80 overflow-hidden",
+            {'open': showMenu, 'close': !showMenu}
+          )}
         >
           <div className="px-6 py-5 border-b border-gray-300">
             <div className="relative">
@@ -136,7 +142,17 @@ export default function Layout({ title, children, back }) {
         </div>
         <div className="flex flex-grow flex-col">
           <header className="flex justify-between bg-white px-5 md:px-8 lg:px-16 py-5 md:py-5">
-            <h5 className="text-xl font-semibold text-gray-400 my-auto">{ title }</h5>
+            <button
+              onClick={toggleMenu}
+              className={classnames('my-auto focus:outline-none md:hidden')}
+            >
+              <svg className="text-gray-400" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1H20" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M0 10H20" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M0 19H20" stroke="currentColor" strokeWidth="1.5"/>
+              </svg>
+            </button>
+            <h5 className="text-xl font-semibold text-gray-400 leading-tight my-auto ml-5 md:ml-0">{ title }</h5>
             <div className="flex gap-4 ml-auto">
               <div className="flex">
                 <button
@@ -145,7 +161,7 @@ export default function Layout({ title, children, back }) {
                   <svg className="text-gray-400" width="14" height="16" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path fill="currentColor" d="M-1263-32H177v900h-1440z"/><path fill="#FFF" d="M-1263-32H177v80h-1440z"/><g fill="#8397AB" fillRule="nonzero"><path d="M17.667-8A5.333 5.333 0 0123-2.667v21.334A5.333 5.333 0 0117.667 24H-3.667A5.333 5.333 0 01-9 18.667V-2.667A5.333 5.333 0 01-3.667-8h21.334zm0 1.333H-3.667A4 4 0 00-7.66-2.902l-.007.235v21.334a4 4 0 003.765 3.993l.235.007h21.334a4 4 0 003.993-3.765l.007-.235V-2.667a4 4 0 00-3.765-3.993l-.235-.007z" fillOpacity=".36"/><path d="M6.564 16c.903 0 1.641-.738 1.641-1.641H4.923c0 .903.73 1.641 1.641 1.641zm4.923-4.923V6.974c0-2.519-1.345-4.627-3.692-5.185V1.23C7.795.55 7.245 0 6.565 0c-.682 0-1.232.55-1.232 1.23v.559c-2.355.558-3.692 2.658-3.692 5.185v4.103L0 12.717v.821h13.128v-.82l-1.64-1.641z"/></g></g></svg>
                 </button>
               </div>
-              <div className="w-10 h-10 bg-gray-400 rounded-full"></div>
+              <Avatar alt="Clayvant Inc" src="/avatar.png" />
             </div>
           </header>
           {/* <div className="flex py-6 md:hidden">
@@ -166,6 +182,7 @@ export default function Layout({ title, children, back }) {
           <div className="flex flex-col px-5 md:px-8 lg:px-16 py-8 md:py-10 mt-18 mb-18">
             {/* <div className="w-full max-w-960 flex-grow mx-auto"> */}
             {children}
+            <Backdrop open={showMenu} onClick={toggleMenu} style={{ zIndex: 1 }} />
             {/* </div> */}
           </div>
         </div>

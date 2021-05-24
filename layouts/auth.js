@@ -20,7 +20,7 @@ export default function Layout({ title, bg, children, back }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex h-screen">
+      <main className="flex min-h-screen">
         <div
           className={classnames(
             "hidden md:flex flex-col content-center h-100 w-96 p-8",

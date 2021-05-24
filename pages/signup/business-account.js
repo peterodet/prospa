@@ -20,7 +20,7 @@ export default function BusinessAccount() {
   }
 
   return (
-    <Layout title="Sign Up" bg="bg-purple-600" back="/signup">
+    <Layout title="Sign Up" bg="bg-purple-600" back="/">
       <div>
         <div className="flex flex-col max-w-375 mx-auto">
           <h4 className="text-2.5xl font-medium leading-tight mb-2 md:mb-2">

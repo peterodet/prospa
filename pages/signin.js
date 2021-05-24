@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Button from '../components/button'
 import Input from '../components/input'
-import Select from '../components/select'
 
 export default function SignIn() {
 
@@ -28,7 +27,7 @@ export default function SignIn() {
           <p className="text-md text-gray-400">
             An account, with powerful, personalised tools all in one place
           </p>
-          <form onSubmit={(e) => submit(e)} className="flex flex-col gap-6 mt-8">
+          <form onSubmit={(e) => submit(e)} className="prospa-form flex flex-col gap-6 mt-8">
             <div>
               <Input type="email" label="Email address" />
             </div>

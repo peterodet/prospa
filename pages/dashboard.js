@@ -2,21 +2,58 @@ import Layout from '../layouts/dashboard'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Button from '../components/button'
-import Input from '../components/input'
-import Select from '../components/select'
+import MuiButton from '@material-ui/core/Button'
+import { HomeIcon } from '../components/icons'
+import NoSsr from '@material-ui/core/NoSsr'
+import { withStyles } from '@material-ui/core/styles'
+import {
+  ArgumentAxis,
+  ValueAxis,
+  Chart,
+  LineSeries,
+} from '@devexpress/dx-react-chart-material-ui'
+import LinearProgress from '@material-ui/core/LinearProgress'
+
+const BorderLinearProgress = withStyles((theme) => ({
+  root: {
+    height: 6,
+    borderRadius: 3,
+  },
+  colorPrimary: {
+    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+  },
+  bar: {
+    borderRadius: 3,
+    backgroundColor: '#ffcf56',
+  },
+}))(LinearProgress)
 
 export default function Dashboard() {
 
   const router = useRouter()
   const [loading, setLoading] = useState(false)
 
-  const submit = (e) => {
-    if (e) e.preventDefault()
-    setLoading(true)
-    setTimeout(() => {
-      router.push('/signup/business-account')
-    }, 1500)
+  const thousandLabel = (o) => {
+    return (n) => {
+      return n / 1000 + 'k'
+    }
   }
+
+  const thousandScale = (s) => {
+    console.log(s)
+    // return s
+  }
+
+  const data = [
+    { argument: 'JAN', value: 5000 },
+    { argument: 'FEB', value: 9000 },
+    { argument: 'MAR', value: 11000 },
+    { argument: 'APR', value: 12200 },
+    { argument: 'MAY', value: 12500 },
+    { argument: 'JUN', value: 8000 },
+    { argument: 'JUL', value: 6000 },
+    { argument: 'AUG', value: 10 },
+  ];
 
   return (
     <Layout title="Dashboard">
@@ -36,7 +73,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-12 gap-8 mt-5 md:mt-10">
+        <div className="grid grid-cols-12 gap-7 mt-5 md:mt-10">
           <div className="col-span-12 md:col-span-6">
             <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
               <div className="flex gap-6">
@@ -66,6 +103,185 @@ export default function Dashboard() {
               </div>
               <div className="mt-8 md:mt-12">
                 <p className="text-4xl">N814,800<small className="text-2xl">.45</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-7 mt-5 md:mt-8">
+          <div className="col-span-12 md:col-span-7">
+            <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
+              <h5 className="text-base md:text-lg font-semibold mb-5 md:mb-7">June summary</h5>
+              <div className="flex sm:gap-6 md:gap-12">
+                <div className="text-sm my-auto">
+                  <p className="text-gray-400 font-medium">Money in</p>
+                  <p className="font-medium">N 5,650,000</p>
+                </div>
+                <div className="text-sm my-auto">
+                  <p className="text-gray-400 font-medium">Money out</p>
+                  <p className="font-medium">N 5,650,000</p>
+                </div>
+                <div className="text-sm my-auto">
+                  <p className="text-gray-400 font-medium">Difference</p>
+                  <p className="font-medium">N 5,650,000</p>
+                </div>
+              </div>
+              <div className="mt-5 md:mt-6">
+                <NoSsr>
+                  <Chart
+                    data={data}
+                    height={198}
+                  >
+                    <ArgumentAxis indentFromAxis={25} />
+                    <ValueAxis indentFromAxis={25} tickFormat={thousandLabel} />
+
+                    <LineSeries valueField="value" argumentField="argument" color="#fa4a84" />
+                  </Chart>
+                </NoSsr>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-5">
+            <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-8">
+              <h5 className="text-base md:text-lg font-semibold mb-5 md:mb-7">Cash outflow</h5>
+              <div className="flex flex-col gap-6 sm:gap-12">
+                <div className="sm:grid grid-cols-12 w-full">
+                  <div className="col-span-5 flex mb-3 sm:mb-0">
+                    <div className="rounded text-white" style={{ backgroundColor: '#e900ae' }}>
+                      <HomeIcon color="inherit" />
+                    </div>
+                    <p className="text-gray-400 font-medium my-auto ml-4">Bank Fees</p>
+                  </div>
+                  <div className="col-span-7 text-sm my-auto">
+                    <p className="text-gray-900 font-medium">- N 250,000</p>
+                    <NoSsr>
+                      <BorderLinearProgress variant="determinate" value={85} />
+                    </NoSsr>
+                  </div>
+                </div>
+                <div className="sm:grid grid-cols-12 w-full">
+                  <div className="col-span-5 flex mb-3 sm:mb-0">
+                    <div className="rounded text-white" style={{ backgroundColor: '#17ecd4' }}>
+                      <HomeIcon color="inherit" />
+                    </div>
+                    <p className="text-gray-400 font-medium my-auto ml-4">Internet</p>
+                  </div>
+                  <div className="col-span-7 text-sm my-auto">
+                    <p className="text-gray-900 font-medium">- N 250,000</p>
+                    <NoSsr>
+                      <BorderLinearProgress variant="determinate" value={60} />
+                    </NoSsr>
+                  </div>
+                </div>
+                <div className="sm:grid grid-cols-12 w-full">
+                  <div className="col-span-5 flex mb-3 sm:mb-0">
+                    <div className="rounded text-white" style={{ backgroundColor: '#c155ff' }}>
+                      <HomeIcon color="inherit" />
+                    </div>
+                    <p className="text-gray-400 font-medium my-auto ml-4">Marketing</p>
+                  </div>
+                  <div className="col-span-7 text-sm my-auto">
+                    <p className="text-gray-900 font-medium">- N 250,000</p>
+                    <NoSsr>
+                      <BorderLinearProgress variant="determinate" value={35} />
+                    </NoSsr>
+                  </div>
+                </div>
+                <div className="sm:grid grid-cols-12 w-full">
+                  <div className="col-span-5 flex mb-3 sm:mb-0">
+                    <div className="rounded text-white" style={{ backgroundColor: '#00ec47' }}>
+                      <HomeIcon color="inherit" />
+                    </div>
+                    <p className="text-gray-400 font-medium my-auto ml-4">Transfer</p>
+                  </div>
+                  <div className="col-span-7 text-sm my-auto">
+                    <p className="text-gray-900 font-medium">- N 250,000</p>
+                    <NoSsr>
+                      <BorderLinearProgress variant="determinate" value={18} />
+                    </NoSsr>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-7 mt-5 md:mt-8">
+          <div className="col-span-12">
+            <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
+              <div className="flex mb-5 md:mb-7">
+                <h5 className="text-base md:text-lg font-semibold mr-auto my-auto">Recent transactions</h5>
+                <MuiButton variant="outlined" color="secondary" style={{ textTransform: 'none' }}>
+                  See all
+                </MuiButton>
+              </div>
+              <div className="flex flex-col gap-6 sm:gap-12">
+                <div className="sm:grid grid-cols-12 w-full">
+                  <div className="col-span-12 border-b border-gray-300 py-4">
+                    <div className="flex flex-grow">
+                      <div className="flex-grow">
+                        <div className="flex">
+                          <div className="rounded-full text-gray-400 bg-gray-100 h-10 w-10 my-auto">
+                            <HomeIcon color="inherit" className="mt-2 ml-2" />
+                          </div>
+                          <div className="my-auto ml-4">
+                            <p className="text-gray-900 font-semibold">Transfer Fee</p>
+                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N145.90</p>
+                    </div>
+                  </div>
+                  <div className="col-span-12 border-b border-gray-300 py-4">
+                    <div className="flex flex-grow">
+                      <div className="flex-grow">
+                        <div className="flex">
+                          <div className="rounded-full text-gray-400 bg-gray-100 h-10 w-10 my-auto">
+                            <HomeIcon color="inherit" className="mt-2 ml-2" />
+                          </div>
+                          <div className="my-auto ml-4">
+                            <p className="text-gray-900 font-semibold">Adam Chapman</p>
+                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                    </div>
+                  </div>
+                  <div className="col-span-12 border-b border-gray-300 py-4">
+                    <div className="flex flex-grow">
+                      <div className="flex-grow">
+                        <div className="flex">
+                          <div className="rounded-full text-gray-400 bg-gray-100 h-10 w-10 my-auto">
+                            <HomeIcon color="inherit" className="mt-2 ml-2" />
+                          </div>
+                          <div className="my-auto ml-4">
+                            <p className="text-gray-900 font-semibold">Shirley Barnes</p>
+                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                    </div>
+                  </div>
+                  <div className="col-span-12 border-b border-gray-300 py-4">
+                    <div className="flex flex-grow">
+                      <div className="flex-grow">
+                        <div className="flex">
+                          <div className="rounded-full text-gray-400 bg-gray-100 h-10 w-10 my-auto">
+                            <HomeIcon color="inherit" className="mt-2 ml-2" />
+                          </div>
+                          <div className="my-auto ml-4">
+                            <p className="text-gray-900 font-semibold">Shirley Barnes</p>
+                            <p className="text-sm text-gray-400 font-medium">12:49 AM</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-base sm:text-lg text-gray-900 font-medium my-auto">-N2,000.00</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

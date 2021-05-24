@@ -7,11 +7,15 @@ export default function Button({ type, block, loading, children, onClick }) {
   }
 
   return (
-    <button type={type || 'submit'} className={classnames('bg-pink-500 py-3 px-6 rounded-md text-white focus:outline-none', { 'btn-loading': loading, 'w-full': block })} disabled={loading} onClick={handleClick}>
+    <button type={type || 'submit'} className={classnames('btn bg-pink-500 py-3 px-6 rounded-md text-white focus:outline-none', { 'btn-loading': loading, 'w-full': block })} disabled={loading} onClick={handleClick}>
       <span className="block my-px">
-        { children }
+        { !loading && children }
       </span>
       <style jsx global>{`
+        button.btn {
+          min-height: 50px;
+        }
+
         .btn-loading {
           position: relative;
           pointer-events: none;

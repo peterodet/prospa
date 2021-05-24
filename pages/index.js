@@ -27,7 +27,7 @@ export default function Home() {
               Create your account
             </h4>
             <p className="text-md text-gray-400">A short description about account types</p>
-            <form onSubmit={(e) => submit(e)} className="flex flex-col gap-6 mt-8">
+            <form onSubmit={(e) => submit(e)} className="prospa-form flex flex-col gap-6 mt-8">
               <div>
                 <Input label="First name" />
               </div>
