@@ -179,7 +179,7 @@ export default function Layout({ title, children, back }) {
               </g>
             </svg>
           </div> */}
-          <div className="flex flex-col px-5 md:px-8 lg:px-16 py-8 md:py-10 mt-18 mb-18">
+          <div className="flex flex-col bg-gray-200 px-5 md:px-8 lg:px-16 py-8 md:py-10 mt-18 mb-18">
             {/* <div className="w-full max-w-960 flex-grow mx-auto"> */}
             {children}
             <Backdrop open={showMenu} onClick={toggleMenu} style={{ zIndex: 1 }} />
