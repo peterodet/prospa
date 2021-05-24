@@ -31,7 +31,7 @@ export default function Layout({ title, children, back }) {
         <div
           className={classnames(
             "fixed top-0 left-0 md:relative",
-            "side-menu z-10 flex flex-col content-center shadow-xl bg-white min-h-screen h-100 w-80 overflow-hidden",
+            "side-menu z-10 flex flex-col content-center shadow-xl bg-white min-h-full h-100 w-80 overflow-hidden",
             {'open': showMenu, 'close': !showMenu}
           )}
         >
