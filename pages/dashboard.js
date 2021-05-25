@@ -108,7 +108,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-7 mt-5 md:mt-8">
+        <div className="grid grid-cols-12 gap-7 mt-7 md:mt-8">
           <div className="col-span-12 md:col-span-7">
             <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
               <h5 className="text-base md:text-lg font-semibold mb-5 md:mb-7">June summary</h5>
@@ -206,7 +206,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-7 mt-5 md:mt-8">
+        <div className="grid grid-cols-12 gap-7 mt-7 md:mt-8">
           <div className="col-span-12">
             <div className="bg-white shadow-md rounded-md pt-6 px-6 pb-4">
               <div className="flex mb-5 md:mb-7">
